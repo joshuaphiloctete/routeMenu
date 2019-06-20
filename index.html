@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: grey;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  width: 43.5%;
+  text-align: center;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: black;
+  color: white;
+}
+
+#myInput {
+  box-sizing: border-box;
+  background-image: url('searchicon.png');
+  background-position: 14px 12px;
+  background-repeat: no-repeat;
+  font-size: 16px;
+  padding: 14px 20px 12px 45px;
+  border: 4px solid blue;
+/*   border: none;
+  border-bottom: 1px solid #ddd; */
+  width: 100%;
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+  width: 100%;
+  max-height: 50vh;
+  overflow: scroll;
+  overflow-x: hidden;
+  border: 1px solid #ddd;
+  z-index: 1;
+} 
+
+@media only screen and (max-width: 768px) {
+  .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f6f6f6;
+/*   min-width: 230px; */
+  width: 100%;
+  max-height: 30vh;
+  overflow: scroll;
+  overflow-x: hidden;
+  border: 1px solid #ddd;
+  z-index: 1;
+} 
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown a:hover {background-color: #ddd;}
+
+.show {display: block;}
+</style>
+</head>
+<body>
+
+<h2>Search/Filter Dropdown</h2>
+<p>Click on the button to open the dropdown menu, and use the input field to search for a specific dropdown link.</p>
+
+<div class="dropdown">
+<!--   <button onclick="myFunction()" class="dropbtn">CHOOSE ROUTE</button> -->
+  <input type="text" placeholder="Search.." id="myInput" onclick="myFunction()" onkeyup="filterFunction()">
+  <div id="myDropdown" class="dropdown-content">
+    
+    <div class="chansWrap">
+<div class="chansmenu">
+ 	<a style="height: 16px; line-height: 16px;">▼ CHOOSE ROUTE MAPS &amp; SCHEDULES</a>
+ 	<a href="http://go-rts.com/spring-2018/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/round_black.png" alt="" />COMPLETE WEEKDAY ROUTES MAP</a>
+ 	<a href="http://go-rts.com/weekend-routes-map-spring/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/round_black.png" alt="" />COMPLETE WEEKEND ROUTES MAP</a>
+ 	<a href="http://go-rts.com/route1/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_1.png" alt="" />Rosa Parks Transfer Station To Butler Plaza Transfer Station</a>
+ 	<a href="http://go-rts.com/route2/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_2.png" alt="" />Rosa Parks Transfer Station To NE Walmart Supercenter</a>
+ 	<a href="http://go-rts.com/route3/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_3.png" alt="" />Rosa Parks Transfer Station To N Main Post Office</a>
+ 	<a href="http://go-rts.com/route5/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_5.png" alt="" />Rosa Parks Transfer Station To Oaks Mall</a>
+  <a href="http://go-rts.com/route6/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_6.png" alt="" />Rosa Parks Transfer Station To N Walmart Supercenter</a>
+ 	<a href="http://go-rts.com/route7/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_7.png" alt="" />Rosa Parks Transfer Station To Eastwood Meadows</a>
+ 	<a href="http://go-rts.com/route8/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_8.png" alt="" />Shands To North Walmart Supercenter</a>
+ 	<a href="http://go-rts.com/route9/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_9.png" alt="" />Reitz Union To Hunters Run</a>
+ 	<a href="http://go-rts.com/route10/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_10.png" alt="" />Rosa Parks Transfer Station To Santa Fe</a>
+ 	<a href="http://go-rts.com/route11/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_11.png" alt="" />Rosa Parks Transfer Station To Eastwood Meadows</a>
+ 	<a href="http://go-rts.com/route12/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_12.png" alt="" />Reitz Union To Butler Plaza Transfer Station</a>
+ 	<a href="http://go-rts.com/route13/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_13.png" alt="" />Beaty Towers To Cottage Grove Apartments</a>
+ 	<a href="http://go-rts.com/route15/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_15.png" alt="" />Rosa Parks Transfer Station To NW 13th Street</a>
+ 	<a href="http://go-rts.com/route16/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_16.png" alt="" />Beaty Towers To Sugar Hill</a>
+ 	<a href="http://go-rts.com/route17/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_17.png" alt="" />Beaty Towers To Rosa Parks Transfer Station</a>
+ 	<a href="http://go-rts.com/route20/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_20.png" alt="" />Reitz Union To Oaks Mall</a>
+ 	<a href="http://go-rts.com/route23/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_23.png" alt="" />Oaks Mall To Santa Fe via Ft. Clarke Blvd.</a>
+ 	<a href="http://go-rts.com/route24/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_24.png" alt="" />Rosa Parks Transfer Station To Job Corps</a>
+ 	<a href="http://go-rts.com/route25/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_25.png" alt="" />UF Commuter Lot To Airport</a>
+ 	<a href="http://go-rts.com/route26/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_26.png" alt="" />Rosa Parks Transfer Station To Airport</a>
+ 	<a href="http://go-rts.com/route27/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_27.png" alt="" />Rosa Parks Downtown Station To NE Walmart Supercenter</a>
+ 	<a href="http://go-rts.com/route33/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_33.png" alt="" />Butler Plaza Transfer Station To Midtown</a>
+ 	<a href="http://go-rts.com/route34/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_34.png" alt="" />The Hub To Lexington Crossing</a>
+ 	<a href="http://go-rts.com/route35/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_35.png" alt="" />Reitz Union To SW 35th Place</a>
+ 	<a href="http://go-rts.com/route37/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_37.png" alt="" />Reitz Union To Butler Plaza Transfer Station</a>
+ 	<a href="http://go-rts.com/route38/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_38.png" alt="" />The Hub To Gainesville Place</a>
+ 	<a href="http://go-rts.com/route43/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_43.png" alt="" />Shands To Santa Fe</a>
+ 	<a href="http://go-rts.com/route46/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_46.png" alt="" />Reitz Union To Rosa Parks Transfer Station</a>
+ 	<a href="http://go-rts.com/route75/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_75.png" alt="" />Oaks Mall To Butler Plaza Transfer Station</a>
+ 	<a href="http://go-rts.com/route711/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/route_711.png" alt="" />Rosa Parks Transfer Station To Eastwood Meadows</a>
+
+ 	<a href="http://go-rts.com/route-600/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/600a.jpg" alt="" />Eastwood Meadows Area to Rosa Parks Transfer Station</a>
+ 	<a href="http://go-rts.com/route-601/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/601.jpg" alt="" />Rosa Parks Transfer Station to Eastwood Meadows Area</a>
+ 	<a href="http://go-rts.com/route-901x/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/901.jpg" alt="" />Express Service from Lake City thru Alachua to Butler Plaza Transfer Station</a>
+ 	<a href="http://go-rts.com/902x/"><img src="http://go-rts.com/schedule-spring/images/routes_icon/902.jpg" alt="" />Express Service from Trenton thru Newberry to Butler Plaza Transfer Station</a>
+
+</div>
+</div>
+  </div>
+</div>
+
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("myDropdown");
+  a = div.getElementsByTagName("a");
+  for (i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+</body>
+</html>
+
